@@ -1,7 +1,7 @@
 {
   "name": "com.xcelerategames.ioc",
   "displayName": "IOC Framework for Unity",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "unity": "2021.3",
   "description": "A lightweight and extensible Inversion of Control (IOC) framework for Unity by Altaf Navalur.",
   "author": {
@@ -12,9 +12,9 @@
   "license": "MIT",
   "samples": [
     {
-      "displayName": "Basic Example Scene",
+      "displayName": "IOC Demo",
       "description": "Demonstrates IOC container setup and dependency binding.",
-    "path": "Samples~/BasicExample"
+    "path": "Samples~/"
   }
 ]
 }

@@ -11,7 +11,7 @@ This framework provides a powerful signal-command architecture for decoupled com
 ### Option 1: Using Git URL
 Add this line to your project's `Packages/manifest.json`:
 ```json
-"com.xcelerategames.ioc": "https://github.com/altaf-navalur/unity-ioc-framework.git#1.0.5"
+"com.xcelerategames.ioc": "https://github.com/altaf-navalur/unity-ioc-framework.git#1.0.6"
 ```
 
 ### Option 2: Via OpenUPM (coming soon)
