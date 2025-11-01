@@ -352,7 +352,7 @@ Always remove listeners in `OnDestroy`:
 ```csharp
 void OnDestroy()
 {
-    mySignal?.RemoveListener(OnMySignalReceived);
+    mySignal.RemoveListener(OnMySignalReceived);
 }
 ```
 
