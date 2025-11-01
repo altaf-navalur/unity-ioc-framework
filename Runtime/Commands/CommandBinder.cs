@@ -24,7 +24,7 @@ namespace XcelerateGames.IOC
                 AddSignalToSequence<T>(mCurrentSignal);
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -35,7 +35,7 @@ namespace XcelerateGames.IOC
                 RemoveCommandFromSequence(CurrentSignal, typeof(T));
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -68,7 +68,7 @@ namespace XcelerateGames.IOC
         {
             CurrentSignal = GetSignal<T>();
             if (CurrentSignal == null)
-                XDebug.LogException("No binding found for " + typeof(T));
+                Debug.LogError("No binding found for " + typeof(T));
             return this;
         }
 
@@ -79,7 +79,7 @@ namespace XcelerateGames.IOC
                 AddCommandToSequence(CurrentSignal, new T());
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -93,7 +93,7 @@ namespace XcelerateGames.IOC
                     Debug.LogError("You must add atlest one command before assigning Final command");
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -107,7 +107,7 @@ namespace XcelerateGames.IOC
                     Debug.LogError("You must add atlest one command before assigning Fail command");
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -121,7 +121,7 @@ namespace XcelerateGames.IOC
                     Debug.LogError("You must add atlest one command before assigning ContinueOnAbort");
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -135,7 +135,7 @@ namespace XcelerateGames.IOC
                     Debug.LogError("You must add atlest one command before assigning ExecuteParallel");
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -149,7 +149,7 @@ namespace XcelerateGames.IOC
                     Debug.LogError("You must add atlest one command before calling Once");
             }
             else
-                XDebug.LogException("Current Signal is null");
+                Debug.LogError("Current Signal is null");
             return this;
         }
 
@@ -204,7 +204,7 @@ namespace XcelerateGames.IOC
                 _SignalBindings[signal].AddSignal(sigToDispatch);
             }
             else
-                XDebug.LogException($"Signal of {typeof(T)} must be bind before it can be added to Signal dispatch sequence.");
+                Debug.LogError($"Signal of {typeof(T)} must be bind before it can be added to Signal dispatch sequence.");
         }
 
         public ICommandBinder Mute<T>(params object[] executionParameters) where T : AbstractSignal, new()

@@ -36,7 +36,7 @@ namespace XcelerateGames.IOC
         /// <summary>
         /// Are debug logs enabled?
         /// </summary>
-        public bool DebugLogsOn => DebugLogs || XDebug.CanLog(XDebug.Mask.IOC);
+        public bool DebugLogsOn => DebugLogs;
 
         /// <summary>
         /// Callback for referenced signals

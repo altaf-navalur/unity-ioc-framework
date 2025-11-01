@@ -17,7 +17,7 @@ namespace XcelerateGames.IOC
             BindingManager bindingManager = BindingManager.Instance;
             if (bindingManager == null)
             {
-                XDebug.LogException("BindingManager.Instance is null, Not injecting any dependency");
+                Debug.LogError("BindingManager.Instance is null, Not injecting any dependency");
                 return;
             }
             Type type = obj.GetType();
@@ -102,7 +102,7 @@ namespace XcelerateGames.IOC
             BindingManager bindingManager = BindingManager.Instance;
             if (bindingManager == null)
             {
-                XDebug.LogException("BindingManager.Instance is null, Not injecting any dependency");
+                Debug.LogError("BindingManager.Instance is null, Not injecting any dependency");
                 return;
             }
 

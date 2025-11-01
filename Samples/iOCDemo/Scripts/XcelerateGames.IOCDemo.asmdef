@@ -1,0 +1,16 @@
+{
+    "name": "XcelerateGames.IOC.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ba8ba62a9624c4ec69bc068972b0a767"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

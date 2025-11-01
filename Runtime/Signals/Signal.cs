@@ -39,7 +39,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<0> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -56,7 +56,7 @@ namespace XcelerateGames.IOC
                                 Debug.LogWarning($"{GetType()}:Target object is null for : {dlt.Method}");
                             continue;
                         }
-                        if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                        if (DebugLogsOn)
                             Debug.Log($"Dispatch<0> Invoking :{dlt.Target}::{dlt.Method}");
                         Action dlgt = dlt as Action;
                         dlgt();
@@ -110,7 +110,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<1> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -185,7 +185,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<2> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -202,7 +202,7 @@ namespace XcelerateGames.IOC
                                 Debug.LogWarning($"{GetType()}:Target object is null for : {dlt.Method}");
                             continue;
                         }
-                        if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                        if (DebugLogsOn)
                             Debug.Log($"Dispatch<2> Invoking :{dlt.Target}::{dlt.Method}");
                         Action<T, U> dlgt = dlt as Action<T, U>;
                         dlgt(value1, value2);
@@ -261,7 +261,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<3> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -278,7 +278,7 @@ namespace XcelerateGames.IOC
                                 Debug.LogWarning($"{GetType()}:Target object is null for : {dlt.Method}");
                             continue;
                         }
-                        if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                        if (DebugLogsOn)
                             Debug.Log($"Dispatch<3> Invoking :{dlt.Target}::{dlt.Method}");
                         Action<T, U, V> dlgt = dlt as Action<T, U, V>;
                         dlgt(value1, value2, value3);
@@ -339,7 +339,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<4> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -356,7 +356,7 @@ namespace XcelerateGames.IOC
                                 Debug.LogWarning($"{GetType()}:Target object is null for : {dlt.Method}");
                             continue;
                         }
-                        if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                        if (DebugLogsOn)
                             Debug.Log($"Dispatch<4> Invoking :{dlt.Target}::{dlt.Method}");
                         Action<T, U, V, W> dlgt = dlt as Action<T, U, V, W>;
                         dlgt(value1, value2, value3, value4);
@@ -418,7 +418,7 @@ namespace XcelerateGames.IOC
                 if (mEvent != null)
                 {
                     Delegate[] invocationList = mEvent.GetInvocationList();
-                    if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                    if (DebugLogsOn)
                         Debug.Log($"Dispatch<5> {GetType()} has {invocationList.Length} listeners");
                     for (int i = 0; i < invocationList.Length; ++i)
                     {
@@ -435,7 +435,7 @@ namespace XcelerateGames.IOC
                                 Debug.LogWarning($"{GetType()}:Target object is null for : {dlt.Method}");
                             continue;
                         }
-                        if (DebugLogsOn || (XDebug.CanLog(XDebug.Mask.IOC)))
+                        if (DebugLogsOn)
                             Debug.Log($"Dispatch<5> Invoking :{dlt.Target}::{dlt.Method}");
                         Action<T, U, V, W, X> dlgt = dlt as Action<T, U, V, W, X>;
                         dlgt(value1, value2, value3, value4, value5);

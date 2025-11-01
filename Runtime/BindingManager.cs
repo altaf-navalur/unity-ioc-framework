@@ -8,7 +8,6 @@ namespace XcelerateGames.IOC
     {
         [SerializeField] bool _DontDestroyOnLoad = false;
         public static BindingManager Instance { get; protected set; }
-        protected static FrameworkBindings mFrameworkBindings = null;
         public Dictionary<Type, object> _Bindings
         {
             get
@@ -93,11 +92,6 @@ namespace XcelerateGames.IOC
 
         protected virtual void Awake()
         {
-            Type type = this.GetType();
-            if (type == typeof(FrameworkBindings) || type.IsSubclassOf(typeof(FrameworkBindings)))
-            {
-                mFrameworkBindings = this as FrameworkBindings;
-            }
             Instance = this;
             mCommandBinder = new CommandBinder();
             //Set all bindings
@@ -130,14 +124,6 @@ namespace XcelerateGames.IOC
         protected virtual void OnBindingsComplete()
         {
 
-        }
-
-        protected void AddRoot()
-        {
-            foreach (KeyValuePair<Type, object> valuePair in mFrameworkBindings._Bindings)
-            {
-                _Bindings.Add(valuePair.Key, valuePair.Value);
-            }
         }
 
         protected virtual void OnDestroy()

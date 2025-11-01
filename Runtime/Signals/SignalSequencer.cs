@@ -119,17 +119,12 @@ namespace XcelerateGames.IOC
         private void ExecuteNext()
         {
             mIndex++;
-            if(XDebug.CanLog(XDebug.Mask.IOC))
-                Debug.Log($"SignalSequencer::ExecuteNext: {mSignal} {mIndex}, {mCommands.Count}");
-
             if (mIndex < mCommands.Count)
             {
                 Execute(GetCommand(), true);
             }
             else
             {
-                if (XDebug.CanLog(XDebug.Mask.IOC))
-                    Debug.Log($"Finished executing commands for signal {mSignal}");
                 Execute(OnFinish, false);
                 OnAllExecutionsDone();
             }
@@ -140,8 +135,6 @@ namespace XcelerateGames.IOC
         {
             if (command == null)
                 return;
-            if (XDebug.CanLog(XDebug.Mask.IOC))
-                Debug.Log($"SignalSequencer::Execute {mSignal} : {command}, {mIndex}");
             if (addListeners)
             {
                 //Add listeners
@@ -161,8 +154,6 @@ namespace XcelerateGames.IOC
 
         private void OnCommandReleased(AbstractCommand command)
         {
-            if (XDebug.CanLog(XDebug.Mask.IOC))
-                Debug.Log($"OnCommandReleased {command} for signal {mSignal}");
             //Remove listeners
             command.OnAbort = null;
             command.OnRelease = null;
@@ -172,8 +163,6 @@ namespace XcelerateGames.IOC
 
         private void OnCommandAborted(AbstractCommand command)
         {
-            if (XDebug.CanLog(XDebug.Mask.IOC))
-                Debug.Log($"OnCommandAborted {command} for signal {mSignal}");
             if (mContinueOnAbort)
                 ExecuteNext();
             else
@@ -204,7 +193,7 @@ namespace XcelerateGames.IOC
                 if (obj is Signal)
                     (obj as Signal).Dispatch();
                 else
-                    XDebug.LogException("Dispatching of Signals with arguments is not implemneted");
+                    Debug.LogError("Dispatching of Signals with arguments is not implemented");
             });
         }
 
